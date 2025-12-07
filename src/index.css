@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset and scroll fixes */
+html, body, #root {
+  min-height: 100vh;
+  height: auto !important;
+  overflow: auto !important;
+}
+
+/* Hide scrollbar but allow scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+/* Card-specific styles */
+.card {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Neumorphic shadows */
+.shadow-neumorph {
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+              -8px -8px 15px rgba(255, 255, 255, 0.7);
+}
+
+.hover\:rotate-y-180:hover {
+  transform: rotateY(180deg);
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1),
+              -15px -15px 30px rgba(255, 255, 255, 0.7);
+}
+
+/* Glass morphism effect for card text */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Smooth transitions */
+.transition-3d {
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+/* Card type gradients - extending Tailwind */
+.bg-gradient-card-default {
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+}
+
+.bg-gradient-card-gold {
+  background: linear-gradient(145deg, #fef9e7, #faf3e0);
+}
+
+.bg-gradient-card-platinum {
+  background: linear-gradient(145deg, #e6f7ff, #f0f9ff);
+}
+
+.bg-gradient-card-black {
+  background: linear-gradient(145deg, #2d3748, #4a5568);
+}
+/* Card specific styles */
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Balance overlay positioning */
+.card > div:last-child {
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure card back content is properly aligned */
+.card-back-content {
+  transform: translateZ(50px);
+}
+
+
